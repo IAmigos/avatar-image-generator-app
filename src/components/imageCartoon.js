@@ -11,7 +11,7 @@ const handleChangeStatus = ({ meta, file }, status) => { console.log(status, met
 
 function ImageCartoon() {
     const [cartoon, setCartoon] = useState({file: 'https://static.thenounproject.com/png/574704-200.png'});
-    const [img, setImg] = useState("");
+    const [imgName, setImgName] = useState("out");
 
     const handleSubmit = async (files, allFiles) => {
         const uniqueFile = files[0].file; // forgive me father
@@ -21,6 +21,8 @@ function ImageCartoon() {
       }); 
     
         try {
+          setImgName(uniqueFile.name.split('.')[0])
+          console.log('uniqueFile:: ', uniqueFile)
           const res = await cartoonService.sendImageToConvert(uniqueFile);
 
           const { data } = await cartoonService.getCartoonImage(res.data.filename_cartoon);
@@ -68,13 +70,7 @@ function ImageCartoon() {
           />
           <Grid container spacing={1} alignItems="center" justify="center">
             <Grid item xs={3} >
-              <img src={typeof cartoon.file === 'string' ? cartoon.file : ()=>{
-                const imgName = URL.createObjectURL(cartoon.file)  ;
-                setImg(imgName);
-                console.log("imgName", imgName)
-                return imgName;
-              }
-              }
+              <img src={typeof cartoon.file === 'string' ? cartoon.file : URL.createObjectURL(cartoon.file)}
               alt="cartoon"
               style={{
                 height: "200px",
@@ -84,11 +80,11 @@ function ImageCartoon() {
               />
             </Grid>
             <Grid item xs={3}>
-              <div download={cartoon + ".jpg"} href={img}>
-                <Button variant="contained" color="primary" >
-                  Download
-                </Button>
-              </div>
+            <a href={typeof cartoon.file === 'string' ? cartoon.file : URL.createObjectURL(cartoon.file)} download={imgName + "_cartoon.jpg"}>
+              <Button variant="contained" color="primary" >
+                    Download
+              </Button>
+            </a>
             </Grid>
           </Grid>
 
