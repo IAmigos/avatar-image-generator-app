@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import Dropzone from 'react-dropzone-uploader';
 import cartoonService from "../services/cartoon-service";
 import '../css/App.css';
-import ReactGA from "react-ga";
 import {Grid, Typography} from "@material-ui/core";
 import PublishIcon from '@material-ui/icons/Publish';
 import 'react-dropzone-uploader/dist/styles.css';
 import Button from '@material-ui/core/Button';
+import ReactCrop from 'react-image-crop';
+
 const handleChangeStatus = ({ meta, file }, status) => { console.log(status, meta, file) }
 
 function ImageCartoon() {
@@ -14,11 +15,7 @@ function ImageCartoon() {
     const [imgName, setImgName] = useState("out");
 
     const handleSubmit = async (files, allFiles) => {
-        const uniqueFile = files[0].file; // forgive me father
-      ReactGA.event({
-        category: 'Usuario',
-        action: 'Imagen Enviada'
-      }); 
+        const uniqueFile = files[0].file; 
     
         try {
           setImgName(uniqueFile.name.split('.')[0])
@@ -34,10 +31,6 @@ function ImageCartoon() {
         }
       }    
 
-    const handleOnClick = ()=>{
-      console.log('Blob!', cartoon.file)
-      const imgURL = window.URL.createObjectURL(cartoon.file);
-    }
 
       return (
         <div className="containerDropzone">
