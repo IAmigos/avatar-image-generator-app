@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+.containerDropzone {
+  width: 75%;
+  align-content: center;
+  padding: 40px;
+  margin: auto;
+}
+
+.cartoonImage {
+  align-content: center;
+  margin: auto;
+  padding: 100px;
+  width: 20%;
+}
