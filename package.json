@@ -11,6 +11,8 @@
     "axios": "^0.21.1",
     "cropperjs": "^1.5.10",
     "dropzone": "^5.7.6",
+    "mdbreact": "^5.0.1",
+    "rc-footer": "^0.6.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-dropzone": "^11.3.1",

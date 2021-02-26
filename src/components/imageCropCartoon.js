@@ -168,24 +168,15 @@ function ImageCartoon(){
 
     return (
         <div>
+ 
             <div>
-                <h1>Avatar Image Generator</h1>
-                <a>Here you can create a virtual avatar based on your appearance. Just upload a picture of your face below, crop it, and you're done!</a>
-            </div>
-            <div>
-                <div>
+                <div style={{margin:'50px'}}>
                     <ReactCrop src={typeof face.file === 'string' ? face.file : URL.createObjectURL(face.file)} 
                                 crop={faceCrop.crop} onChange={onChangeCrop}
                                 onComplete={handleOnCropComplete}
                                 />
-                    <img src={faceCrop.imageCropped} alt='Cropped Image' 
-                        style={{
-                            height: "200px",
-                            width:"200px"
-                            }}
-                    />
                 </div> 
-                <div>
+                <div style={{margin:'30px'}}>
                     <Dropzone
                         onChangeStatus={handleChangeStatus}
                         accept={typefilesAccepted}
@@ -212,16 +203,25 @@ function ImageCartoon(){
                     >   
                     </Dropzone>
                 </div>
-                <div>
+                <div >
+                <img src={faceCrop.imageCropped} alt='Cropped Image' 
+                        style={{
+                            height: "200px",
+                            width:"200px",
+                            margin:"20px"
+                            }}
+                    />
                     <img src={typeof cartoon.file === 'string' ? cartoon.file : URL.createObjectURL(cartoon.file)} 
                         style={{
                         height: "200px",
                         width:"200px",
+                        margin:"20px"
                         }}
                         className='cartoonImage'
                     />
                 </div>
-                <div>
+                <div style={{margin:'30px',
+                            marginBottom:'100px'}}>
                     <a href={typeof cartoon.file === 'string' ? cartoon.file : URL.createObjectURL(cartoon.file)} download={face.nameFile + "_cartoon.jpg"}>
                         <Button variant="contained" color="primary" >
                                 Download
