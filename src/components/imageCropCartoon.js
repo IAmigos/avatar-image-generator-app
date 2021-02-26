@@ -169,39 +169,15 @@ function ImageCartoon(){
     return (
         <div>
             <div>
-                <Dropzone
-                    onChangeStatus={handleChangeStatus}
-                    accept={typefilesAccepted}
-                    onSubmit={handleSubmit}
-                    maxFiles={1}
-                    styles={{
-                        dropzone: { width: '50%', height: 200, overflow: 'hidden', backgroundColor: '#ECECEC' },
-
-                      }}
-                    inputContent={(
-                        <Grid key="1" container direction="row" justify="center" alignItems="center">
-                          <Grid item xs={3}>
-                          <PublishIcon style={{ fontSize: 80, color: '#000000' }} />
-                          </Grid>
-                          <Grid item xs={6}>
-                            <Typography variant="h6"> Drag or select a face image </Typography>
-                          </Grid>
-                          <Grid item xs={6}>
-                            <Typography variant="body2">Allowed formats (.jpg, .jpeg, .png)</Typography>
-                          </Grid>
-                        </Grid>
-                      )}
-                    submitButtonContent="Convert to cartoon"
-                >   
-                </Dropzone>
+                <h1>Avatar Image Generator</h1>
+                <a>Here you can create a virtual avatar based on your appearance. Just upload a picture of your face below, crop it, and you're done!</a>
+            </div>
+            <div>
                 <div>
                     <ReactCrop src={typeof face.file === 'string' ? face.file : URL.createObjectURL(face.file)} 
                                 crop={faceCrop.crop} onChange={onChangeCrop}
                                 onComplete={handleOnCropComplete}
                                 />
-                               
-                </div>
-                <div>
                     <img src={faceCrop.imageCropped} alt='Cropped Image' 
                         style={{
                             height: "200px",
@@ -209,6 +185,33 @@ function ImageCartoon(){
                             }}
                     />
                 </div> 
+                <div>
+                    <Dropzone
+                        onChangeStatus={handleChangeStatus}
+                        accept={typefilesAccepted}
+                        onSubmit={handleSubmit}
+                        maxFiles={1}
+                        styles={{
+                            dropzone: { width: '50%', height: 200, overflow: 'hidden', backgroundColor: '#ECECEC' },
+
+                        }}
+                        inputContent={(
+                            <Grid key="1" container direction="row" justify="center" alignItems="center">
+                            <Grid item xs={3}>
+                            <PublishIcon style={{ fontSize: 80, color: '#000000' }} />
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Typography variant="h6"> Drag or select a face image </Typography>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Typography variant="body2">Allowed formats (.jpg, .jpeg, .png)</Typography>
+                            </Grid>
+                            </Grid>
+                        )}
+                        submitButtonContent="Convert to cartoon"
+                    >   
+                    </Dropzone>
+                </div>
                 <div>
                     <img src={typeof cartoon.file === 'string' ? cartoon.file : URL.createObjectURL(cartoon.file)} 
                         style={{
@@ -219,11 +222,11 @@ function ImageCartoon(){
                     />
                 </div>
                 <div>
-                <a href={typeof cartoon.file === 'string' ? cartoon.file : URL.createObjectURL(cartoon.file)} download={face.nameFile + "_cartoon.jpg"}>
-                    <Button variant="contained" color="primary" >
-                            Download
-                    </Button>
-                </a>
+                    <a href={typeof cartoon.file === 'string' ? cartoon.file : URL.createObjectURL(cartoon.file)} download={face.nameFile + "_cartoon.jpg"}>
+                        <Button variant="contained" color="primary" >
+                                Download
+                        </Button>
+                    </a>
                 </div>    
             </div>
         </div>
