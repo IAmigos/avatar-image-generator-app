@@ -2,7 +2,7 @@ import React from "react";
 import SimpleReactFooter from "simple-react-footer";
 
 const FooterPage = () => {
-    const description = "We have implemented in Pytorch the XGAN model by Google based only on the original paper.";
+    const description = "We have implemented in Pytorch the XGAN model based only on the original paper.";
   const title = "XGAN implementation from scratch.";
   const columns = [
     {
