@@ -1,3 +1,4 @@
+import { AssignmentReturnedSharp } from "@material-ui/icons";
 import React from "react";
 import SimpleReactFooter from "simple-react-footer";
 
@@ -19,19 +20,16 @@ const FooterPage = () => {
         ]
     }
  ];
-  return (
-      
-    <SimpleReactFooter 
+  return <SimpleReactFooter 
     description={description} 
     title={title}
     columns={columns}
     iconColor="#FFFFFF"
     backgroundColor="#0077BE"
     fontColor="#FFFFFF"
-    copyright="uwu"
- />
-  
-  );
+    copyright="paper2code-pucp"
+    width="100%"
+ />;
 }
 
 export default FooterPage;
