@@ -70,11 +70,11 @@ function ImageCartoon(){
     const handleChangeStatus = ({ meta, file }, status) => { 
         console.log(status, meta, file)
 
-        if(status=='done'){
+        if(status==='done'){
             handleChangeDone({file})
         } 
 
-        if(status=='removed'){
+        if(status==='removed'){
             handleChangeRemoved()
         }
         
