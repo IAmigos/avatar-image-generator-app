@@ -13,7 +13,7 @@ const Footer = () => {
     <Box> 
       <h1 style={{ color: "white",  
                    textAlign: "center",  
-                   marginTop: "-50px" }}> 
+                   marginTop: "29px" }}> 
         XGAN implementation from scratch
       </h1> 
       <p style={{ color: "white",  
@@ -21,16 +21,25 @@ const Footer = () => {
         Pytorch implementation of the XGAN model based only on the original paper.
       </p>
       <Container> 
-        <Column>
-        <Heading>Resources</Heading>
-        </Column>
         <Row> 
-          <Column> 
-            <FooterLink href="https://github.com/paper2code-pucp/avatar-image-generator">Our repository</FooterLink> 
-          </Column> 
-          <Column> 
-            <FooterLink href="https://arxiv.org/abs/1711.05139">XGAN Paper</FooterLink> 
-          </Column> 
+            <Column>
+            </Column>
+            <Column>
+                <Heading>Resources</Heading>
+
+                <FooterLink href="https://github.com/paper2code-pucp/avatar-image-generator">Project's Repository</FooterLink> 
+                <FooterLink href="https://arxiv.org/abs/1711.05139">XGAN Original Paper</FooterLink> 
+            </Column>
+            <Column>
+                <Heading>Contact us</Heading>
+
+                <FooterLink href="https://www.linkedin.com/in/daniel-ibanez/">Daniel Ibáñez</FooterLink> 
+                <FooterLink href="https://www.linkedin.com/in/davidfreidenson/">David Freidenson</FooterLink> 
+                <FooterLink href="https://www.linkedin.com/in/joel-cabrera-rios/">Joel Cabrera</FooterLink> 
+                <FooterLink href="https://www.linkedin.com/in/manuel-harold-stev-huaman-ramos/">Stev Huamán</FooterLink> 
+                <p></p>
+            </Column>
+
         </Row> 
       </Container> 
     </Box> 

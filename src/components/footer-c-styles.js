@@ -1,7 +1,7 @@
 import styled from 'styled-components'; 
    
 export const Box = styled.div` 
-  padding: 80px 60px; 
+  padding: 1px 1px; 
   background: #0077BE; 
   position: relative; 
   bottom: 0; 
@@ -9,7 +9,7 @@ export const Box = styled.div`
   
    
   @media (max-width: 1000px) { 
-    padding: 70px 30px; 
+    padding: 1px 30px; 
   } 
 `; 
    
